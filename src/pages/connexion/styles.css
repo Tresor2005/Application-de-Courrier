@@ -1,0 +1,12 @@
+/* styles.css */
+.button {
+    background-color: #4CAF50; /* Couleur de fond par défaut */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #ccff00; /* Vert citron */
+  }
+  
