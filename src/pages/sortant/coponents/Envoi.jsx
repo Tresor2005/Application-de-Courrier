@@ -9,7 +9,7 @@ export default function ComboBox() {
   return (
     <div style={{  justifyContent: 'space-between', alignItems: 'center', }}>
         
-        <TextField id="outlined-basic" label="Objet" variant="outlined" sx={{ width: "100%" }} />
+        <TextField id="outlined-basic" label="Objet" variant="outlined" sx={{ width: "100%", marginTop: 10 }} />
        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', alignContent: 'center' }}> 
         <Autocomplete
           disablePortal
@@ -25,7 +25,11 @@ export default function ComboBox() {
       <Button variant="contained"
             sx={{width: "100%",
                 height: "45px",
-                marginTop: 2
+                marginTop: 2,
+                backgroundColor: "#00a652", // Couleur principale verte
+                  ":hover": {
+                    backgroundColor: "#8fdc5c", // Vert citron au survol
+                  },
             }}
         >
             Envoyer Courrier

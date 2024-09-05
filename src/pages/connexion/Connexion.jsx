@@ -29,7 +29,7 @@ export default function Connexion() {
         }}
       >
         <img
-          src="https://tse4.mm.bing.net/th?id=OIG2.NIYk0il3jAI6ZTYN2XFb&pid=ImgGn"
+          src="src\pages\connexion\Présentation-du-CENADI.jpg"
           alt="Logo"
           style={{
             width: 100,
@@ -62,6 +62,7 @@ export default function Connexion() {
               type="password"
             />
           </Stack>
+          <Link to="/dashbord">
           <Button
             variant="contained"
             sx={{
@@ -75,7 +76,7 @@ export default function Connexion() {
             onClick={() => toast.success("Vous êtes connecté !")}
           >
             Connexion
-          </Button>
+          </Button></Link>
           <Typography paddingTop={2}>
             Voulez-vous créer un compte ?{" "}
             <Link to="/inscription">Cliquez ici</Link>

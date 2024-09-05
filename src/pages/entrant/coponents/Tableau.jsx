@@ -15,7 +15,7 @@ import ArchiveIcon from '@mui/icons-material/Archive';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: "#1e88e3", // Changez cette valeur pour la couleur souhaitée
+    backgroundColor: "#00a652", // Changez cette valeur pour la couleur souhaitée
     color: theme.palette.common.white,
   },
   [`&.${tableCellClasses.body}`]: {

@@ -15,8 +15,11 @@ import RestoreIcon from '@mui/icons-material/Restore';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: "#1e88e3", // Changez cette valeur pour la couleur souhaitée
+    backgroundColor: "#00a652", // Changez cette valeur pour la couleur souhaitée
     color: theme.palette.common.white,
+    position: 'sticky',
+    top: 0,
+    zIndex: 1,
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
@@ -47,7 +50,7 @@ const rows = [
 
 export default function CustomizedTables() {
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} sx={{marginTop: 10}}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead sx={{backgroundColor: "blueviolet"}}>
           <TableRow>

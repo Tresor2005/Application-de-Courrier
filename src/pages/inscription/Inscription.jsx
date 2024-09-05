@@ -59,8 +59,19 @@ export default function Inscription() {
         sx={{
           backgroundColor: "#f7f7f7",
           padding: 3,
+          textAlign: "center",
         }}
       >
+        <img
+          src="https://tse4.mm.bing.net/th?id=OIG2.NIYk0il3jAI6ZTYN2XFb&pid=ImgGn"
+          alt="Logo"
+          style={{
+            width: 100,
+            height: 100,
+            borderRadius: "50%",
+            marginBottom: 20,
+          }}
+        />
         <Typography variant="h5">Inscription</Typography>
         <form
           style={{

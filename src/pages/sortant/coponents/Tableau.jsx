@@ -10,11 +10,13 @@ import Paper from '@mui/material/Paper';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: "#1e88e3", // Changez cette valeur pour la couleur souhaitée
+    backgroundColor: "#00a652",
     color: theme.palette.common.white,
+    position: 'sticky',
+    top: 0,
+    zIndex: 1,
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
@@ -25,7 +27,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   '&:nth-of-type(odd)': {
     backgroundColor: theme.palette.action.hover,
   },
-  // hide last border
   '&:last-child td, &:last-child th': {
     border: 0,
   },
@@ -35,7 +36,7 @@ function createData(objet, Destinataire, Indication, Date, Heure) {
   return { objet, Destinataire, Indication, Date, Heure };
 }
 
-const rows = [
+const initialRows = [
   createData('Demmande de Stage', 'SIMO', 'A Traiter Avec Beaucoup de Rigueur', '12/02/24','12:30'),
   createData('Lettre de Demission', 'Directeur', 'A traiter au Plus Vite', '12/02/24','12:30'),
   createData('Notification de changement d’adresse', 'SIMO', 'A transmettre', '12/02/24','12:30'),
@@ -44,10 +45,18 @@ const rows = [
 ];
 
 export default function CustomizedTables() {
+  const [rows, setRows] = React.useState(initialRows);
+
+  const handleDelete = (index) => {
+    const newRows = [...rows];
+    newRows.splice(index, 1);
+    setRows(newRows);
+  };
+
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} sx={{marginBottom: 1, maxHeight: 400}}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
-        <TableHead sx={{backgroundColor: "blueviolet"}}>
+        <TableHead>
           <TableRow>
             <StyledTableCell>Objet</StyledTableCell>
             <StyledTableCell align="right">Destinataire</StyledTableCell>
@@ -58,7 +67,7 @@ export default function CustomizedTables() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {rows.map((row, index) => (
             <StyledTableRow key={row.objet}>
               <StyledTableCell component="th" scope="row">
                 {row.objet}
@@ -68,7 +77,7 @@ export default function CustomizedTables() {
               <StyledTableCell align="right">{row.Date}</StyledTableCell>
               <StyledTableCell align="right">{row.Heure}</StyledTableCell>
               <StyledTableCell align="right">
-                <IconButton aria-label="Supprimer">
+                <IconButton aria-label="Supprimer" onClick={() => handleDelete(index)}>
                   <DeleteIcon />
                 </IconButton>
               </StyledTableCell>

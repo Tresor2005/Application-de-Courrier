@@ -27,9 +27,8 @@ export default function BasicList() {
       alignItems="center"
       justifyContent="center"
       height="100vh"
-      bgcolor="#f5f5f5"
     >
-      <nav aria-label="secondary mailbox folders" style={{ backgroundColor: '#5472AE', color: 'white', marginBottom: 50 }}>
+      <nav aria-label="secondary mailbox folders" style={{ backgroundColor: '#00a652', color: 'white', marginBottom: 50 }}>
         <List>
           <ListItem disablePadding>
             <ListItemButton onClick={handleProfileClick}>
@@ -56,7 +55,7 @@ export default function BasicList() {
       <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
         <MenuItem>Nom: John Doe</MenuItem>
         <MenuItem>Email: john.doe@example.com</MenuItem>
-        <MenuItem>Mot de passe: ********</MenuItem>
+        <MenuItem>Mot de passe: 12345678</MenuItem>
         <MenuItem>Poste: Développeur</MenuItem>
       </Menu>
     </Box>

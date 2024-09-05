@@ -23,6 +23,10 @@ export default function InputFileUpload() {
       variant="contained"
       tabIndex={-1}
       startIcon={<CloudUploadIcon />}
+      sx={{backgroundColor: "#00a652", // Couleur principale verte
+        ":hover": {
+          backgroundColor: "#8fdc5c", // Vert citron au survol
+        },}}
     >
       Importer Courrier 
       <VisuallyHiddenInput type="file" accept=".zip,.rar,.7z" />

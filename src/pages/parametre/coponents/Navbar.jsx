@@ -22,6 +22,7 @@ import ArchiveIcon from '@mui/icons-material/Archive';
 import SettingsIcon from '@mui/icons-material/Settings';
 import HomeIcon from '@mui/icons-material/Home';
 import { Link } from 'react-router-dom';
+import TextField from '@mui/material/TextField';
 
 const drawerWidth = 240;
 
@@ -106,9 +107,15 @@ export default function PersistentDrawerLeft() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Gestion de Courrier
+          <Typography variant="h6" noWrap component="div" marginRight={130}>
+            Parametre
           </Typography>
+          <TextField
+            variant="outlined"
+            placeholder="Recherche..."
+            size="small"
+            sx={{ backgroundColor: 'white', borderRadius: 1,  }}
+          />
         </Toolbar>
       </AppBar>
       <Drawer
